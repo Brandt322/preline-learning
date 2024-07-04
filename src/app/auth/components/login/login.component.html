@@ -12,69 +12,113 @@
       <form
         [formGroup]="loginForm"
         (ngSubmit)="onSubmit()"
-        class="grid gap-4 grid-cols-1 w-full max-w-md px-2 mx-auto sm:max-w-lg"
+        class="grid gap-2 grid-cols-1 w-full max-w-md px-2 mx-auto sm:max-w-lg"
       >
-        <p class="font-bold text-3xl mt-16 text-start">Inicio de sesión</p>
-        <div class="">
+        <p class="font-bold text-3xl mt-16 text-start">Inicia sesión</p>
+        <div class="relative">
           <input
             type="text"
-            class="transition-colors mb-2 bg-gray-50 pr-14 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
-            placeholder="Nombre de usuario"
+            class="peer transition-colors ps-11 mb-2 bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
+            placeholder="Usuario"
             autocomplete="on"
             formControlName="username"
           />
           <div
-            @fadeInOut
-            class="grid gap-2 leading-tight mt-1"
-            *ngIf="
-              loginForm.get('username')?.touched &&
-              loginForm.get('username')?.errors
-            "
+            class="absolute mb-1 inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none"
           >
-            <span
-              class="font-medium text-red-500 leading-tight"
-              *ngIf="loginForm.get('username')?.errors?.['required']"
+            <svg
+              class="flex-shrink-0 text-gray-500 dark:text-neutral-500"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              El campo de username es requerido.
-            </span>
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
           </div>
         </div>
+        <div
+          @fadeInOut
+          class="grid gap-2 leading-tight -mt-1 mb-2"
+          *ngIf="
+            loginForm.get('username')?.touched &&
+            loginForm.get('username')?.errors
+          "
+        >
+          <span
+            class="font-medium text-red-500 leading-tight"
+            *ngIf="loginForm.get('username')?.errors?.['required']"
+          >
+            El campo de username es requerido.
+          </span>
+        </div>
 
-        <div class="">
+        <div class="relative">
           <input
             type="password"
-            class="transition-colors mb-2 bg-gray-50 pr-14 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
+            class="peer transition-colors ps-11 mb-2 bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
             placeholder="Contraseña"
             formControlName="password"
           />
           <div
-            @fadeInOut
-            class="grid gap-2 leading-tight mt-1"
-            *ngIf="
-              loginForm.get('password')?.touched &&
-              loginForm.get('password')?.errors
-            "
+            class="absolute mb-1 inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none"
           >
-            <span
-              class="font-medium text-red-500 leading-tight"
-              *ngIf="loginForm.get('password')?.errors?.['required']"
+            <svg
+              class="flex-shrink-0 text-gray-500 dark:text-neutral-500 w-6 h-6 inline-block"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              El campo de password es requerido.
-            </span>
-            <span
-              class="font-medium text-red-500 leading-tight"
-              *ngIf="loginForm.get('password')?.errors?.['minLength']"
-            >
-              Debes ingresar al menos un digito.
-            </span>
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288"
+                  stroke="#6b7280"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
           </div>
         </div>
-
+        <div
+          @fadeInOut
+          class="grid gap-2 leading-tight -mt-1 mb-2"
+          *ngIf="
+            loginForm.get('password')?.touched &&
+            loginForm.get('password')?.errors
+          "
+        >
+          <span
+            class="font-medium text-red-500 leading-tight"
+            *ngIf="loginForm.get('password')?.errors?.['required']"
+          >
+            El campo de password es requerido.
+          </span>
+          <span
+            class="font-medium text-red-500 leading-tight"
+            *ngIf="loginForm.get('password')?.errors?.['minLength']"
+          >
+            Debes ingresar al menos un digito.
+          </span>
+        </div>
         <button
           [disabled]="loginForm.invalid"
           [class.disabled]="loginForm.invalid"
           type="submit"
-          class="focus:outline-none transition-colors text-white bg-[#2d3c6e] hover:bg-[#455896] focus:ring-4 focus:ring-[#90aaff] font-medium rounded-lg text-xl px-5 py-4"
+          class="focus:outline-none transition-colors text-white bg-[#2d3c6e] hover:bg-[#455896] focus:ring-4 focus:ring-[#90aaff] font-medium rounded-lg text-xl px-5 py-4 mt-3"
         >
           Continuar
           <svg
