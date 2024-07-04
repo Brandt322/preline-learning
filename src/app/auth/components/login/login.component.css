@@ -1,0 +1,13 @@
+.ng-valid:not(form).ng-touched  {
+  border-left: 5px solid #42A948; /* green */
+  border-color: #42A948;
+}
+
+.ng-invalid:not(form).ng-touched  {
+  border-left: 5px solid #a94442; /* red */
+  border-color: #a94442;
+}
+
+button.disabled {
+  background-color: #a0a0a0; /* Color de fondo para el botón deshabilitado */
+}
