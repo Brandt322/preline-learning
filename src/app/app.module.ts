@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { FeatureModule } from './features/feature.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AuthModule,
-    SharedModule
+    SharedModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
