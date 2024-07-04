@@ -1,0 +1,136 @@
+<div class="grid lg:grid-cols-2 overflow-hidden">
+  <div class="flex items-start sm:mx-auto md:mx-0 h-screen mt-20 relative">
+    <div class="flex absolute top-0 left-0 sm:ml-[-1rem] lg:ml-0" @slideIn>
+      <div class="bg-[#ff7600] w-56 lg:min-w-full h-24"></div>
+      <img
+        src="../../../../assets/logo.png"
+        alt="fractal-logo"
+        class="bg-cover w-24 rounded-r-2xl"
+      />
+    </div>
+    <div class="relative mx-auto w-full max-w-md px-2 sm:max-w-lg mt-24">
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+        class="grid gap-4 grid-cols-1 w-full max-w-md px-2 mx-auto sm:max-w-lg"
+      >
+        <p class="font-bold text-3xl mt-16 text-start">Inicio de sesión</p>
+        <div class="">
+          <input
+            type="text"
+            class="transition-colors mb-2 bg-gray-50 pr-14 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
+            placeholder="Nombre de usuario"
+            autocomplete="on"
+            formControlName="username"
+          />
+          <div
+            @fadeInOut
+            class="grid gap-2 leading-tight mt-1"
+            *ngIf="
+              loginForm.get('username')?.touched &&
+              loginForm.get('username')?.errors
+            "
+          >
+            <span
+              class="font-medium text-red-500 leading-tight"
+              *ngIf="loginForm.get('username')?.errors?.['required']"
+            >
+              El campo de username es requerido.
+            </span>
+          </div>
+        </div>
+
+        <div class="">
+          <input
+            type="password"
+            class="transition-colors mb-2 bg-gray-50 pr-14 border focus:outline-none border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-4 focus:ring-gray-200 block w-full p-4"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+          <div
+            @fadeInOut
+            class="grid gap-2 leading-tight mt-1"
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              loginForm.get('password')?.errors
+            "
+          >
+            <span
+              class="font-medium text-red-500 leading-tight"
+              *ngIf="loginForm.get('password')?.errors?.['required']"
+            >
+              El campo de password es requerido.
+            </span>
+            <span
+              class="font-medium text-red-500 leading-tight"
+              *ngIf="loginForm.get('password')?.errors?.['minLength']"
+            >
+              Debes ingresar al menos un digito.
+            </span>
+          </div>
+        </div>
+
+        <button
+          [disabled]="loginForm.invalid"
+          [class.disabled]="loginForm.invalid"
+          type="submit"
+          class="focus:outline-none transition-colors text-white bg-[#2d3c6e] hover:bg-[#455896] focus:ring-4 focus:ring-[#90aaff] font-medium rounded-lg text-xl px-5 py-4"
+        >
+          Continuar
+          <svg
+            class="inline-block w-6 h-6 ml-2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <title></title>
+              <g id="Complete">
+                <g id="arrow-right">
+                  <g>
+                    <polyline
+                      data-name="Right"
+                      fill="none"
+                      id="Right-2"
+                      points="16.4 7 21.5 12 16.4 17"
+                      stroke="#ffffff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    ></polyline>
+                    <line
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      x1="2.5"
+                      x2="19.2"
+                      y1="12"
+                      y2="12"
+                    ></line>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="h-screen hidden lg:block">
+    <div class="flex justify-center items-center mx-auto h-full">
+      <img
+        src="../../../../assets/Line pattern.svg"
+        alt="image"
+        class="w-full h-full"
+      />
+    </div>
+  </div>
+</div>
