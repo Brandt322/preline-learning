@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -19,10 +19,11 @@ export class TokenInterceptor implements HttpInterceptor {
 
     let token = sessionStorage.getItem('token');
 
-    const interceptedRequest: HttpRequest<unknown> = request.clone({
-      headers: request.headers.set('Authorization', token!)
-    });
+    let intReq = request;
+    if (token != null) {
+      intReq = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
+    }
 
-    return next.handle(interceptedRequest);
+    return next.handle(intReq);
   }
 }
