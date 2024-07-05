@@ -1,4 +1,4 @@
-<div class="max-w-1xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="max-w-full px-4 py-10 sm:px-6 lg:px-10 lg:py-14 mx-auto">
   <!-- Card -->
   <div class="flex flex-col">
     <div class="-m-1.5 overflow-x-auto">
@@ -13,7 +13,7 @@
             <div class="flex gap-2">
               <h2 class="text-xl font-semibold text-gray-800">Máquinas</h2>
               <span
-                class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-[#ffe5ca]"
+                class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-bold bg-[#ffe5ca] text-[#ff9b33]"
                 >100 máquinas</span
               >
             </div>
@@ -37,9 +37,7 @@
 
                 <th scope="col" class="px-6 py-3 text-start">
                   <div class="flex items-center gap-x-2">
-                    <span
-                      class="text-xs font-semibold uppercase tracking-wide text-gray-800"
-                    >
+                    <span class="text-sm font-semibold text-gray-800">
                       Máquina
                     </span>
                   </div>
@@ -47,9 +45,27 @@
                 <th scope="col" class="px-6 py-3 text-start">
                   <div class="flex items-center gap-x-2">
                     <span
-                      class="text-xs font-semibold uppercase tracking-wide text-gray-800"
+                      class="flex gap-1 text-sm font-semibold text-gray-800"
                     >
                       Estado
+                      <span
+                        class="cursor-pointer text-gray-800 hover:text-[#ff7600] transition-colors"
+                      >
+                        <svg
+                          class="inline-flex"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          fill="currentColor"
+                          class="bi bi-arrow-down"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"
+                          />
+                        </svg>
+                      </span>
                     </span>
                   </div>
                 </th>
@@ -64,7 +80,7 @@
                     <label for="hs-at-with-checkboxes-1" class="flex">
                       <input
                         type="checkbox"
-                        class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                        class="shrink-0 border-0 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                         id="hs-at-with-checkboxes-1"
                       />
                       <span class="sr-only">Checkbox</span>
@@ -72,11 +88,11 @@
                   </div>
                 </td>
 
-                <td class="size-px whitespace-nowrap">
+                <td class="size-max whitespace-nowrap">
                   <div class="px-6 py-3">
                     <div class="flex items-center gap-x-2">
                       <img
-                        class="inline-block size-10"
+                        class="inline-block size-14"
                         src="../../../../../assets/machine.png"
                         alt="Image Description"
                       />
@@ -91,7 +107,7 @@
                 <td class="size-px whitespace-nowrap">
                   <div class="px-6 py-3">
                     <span
-                      class="py-1 px-1.5 inline-flex items-center gap-x-1 text-sm font-medium bg-teal-100 text-teal-800 rounded-full"
+                      class="py-1 px-1.5 inline-flex items-center gap-x-1 text-sm font-medium bg-[#ecfdf3] text-[#027a48] rounded-full"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -110,65 +126,38 @@
 
                 <td class="size-px whitespace-nowrap">
                   <div class="px-6 py-1.5">
-                    <div
-                      class="hs-dropdown [--placement:bottom-right] relative inline-block"
+                    <span
+                      class="inline-flex justify-center items-center size-[46px] rounded-full hover:bg-[#ff7600] hover:text-white text-gray-700 transition-colors cursor-pointer"
                     >
-                      <button
-                        id="hs-table-dropdown-1"
-                        type="button"
-                        class="hs-dropdown-toggle py-1.5 px-2 inline-flex justify-center items-center gap-2 rounded-lg text-gray-700 align-middle disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-trash3"
+                        viewBox="0 0 16 16"
                       >
-                        <svg
-                          class="flex-shrink-0 size-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="1" />
-                          <circle cx="19" cy="12" r="1" />
-                          <circle cx="5" cy="12" r="1" />
-                        </svg>
-                      </button>
-                      <div
-                        class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden divide-y divide-gray-200 min-w-40 z-10 bg-white shadow-2xl rounded-lg p-2 mt-2"
-                        aria-labelledby="hs-table-dropdown-1"
+                        <path
+                          d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="inline-flex justify-center items-center size-[46px] rounded-full hover:bg-[#ff7600] hover:text-white text-gray-700 transition-colors cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        class="bi bi-pen"
+                        viewBox="0 0 16 16"
                       >
-                        <div class="py-2 first:pt-0 last:pb-0">
-                          <a
-                            class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                            href="#"
-                          >
-                            Rename
-                          </a>
-                          <a
-                            class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                            href="#"
-                          >
-                            Regenrate Key
-                          </a>
-                          <a
-                            class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                            href="#"
-                          >
-                            Disable
-                          </a>
-                        </div>
-                        <div class="py-2 first:pt-0 last:pb-0">
-                          <a
-                            class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-red-600 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                            href="#"
-                          >
-                            Delete
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                        <path
+                          d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </td>
               </tr>
@@ -183,23 +172,23 @@
             <div>
               <button
                 type="button"
-                class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
               >
                 <svg
-                  class="flex-shrink-0 size-4"
+                  class="flex-shrink-0 size-5"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-arrow-left"
+                  viewBox="0 0 16 16"
                 >
-                  <path d="m15 18-6-6 6-6" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                  />
                 </svg>
-                Prev
+                Volver
               </button>
             </div>
 
@@ -207,36 +196,22 @@
               <nav class="flex items-center space-x-1">
                 <button
                   type="button"
-                  class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
-                >
-                  <span aria-hidden="true">«</span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <button
-                  type="button"
-                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-[#ffe5ca] py-2.5 text-sm rounded-md disabled:opacity-50 disabled:pointer-events-none"
                   aria-current="page"
                 >
                   1
                 </button>
                 <button
                   type="button"
-                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-[#ffe5ca] py-2.5 text-sm rounded-md disabled:opacity-50 disabled:pointer-events-none"
                 >
                   2
                 </button>
                 <button
                   type="button"
-                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none"
+                  class="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-[#ffe5ca] py-2.5 text-sm rounded-md disabled:opacity-50 disabled:pointer-events-none"
                 >
                   3
-                </button>
-                <button
-                  type="button"
-                  class="p-2.5 min-w-[40px] inline-flex justify-center items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
-                >
-                  <span class="sr-only">Next</span>
-                  <span aria-hidden="true">»</span>
                 </button>
               </nav>
             </div>
@@ -245,22 +220,22 @@
               <div class="inline-flex gap-x-2">
                 <button
                   type="button"
-                  class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+                  class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Next
+                  Siguiente
                   <svg
-                    class="flex-shrink-0 size-4"
+                    class="flex-shrink-0 size-5"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
                   >
-                    <path d="m9 18 6-6-6-6" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                    />
                   </svg>
                 </button>
               </div>
