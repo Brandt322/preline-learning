@@ -23,17 +23,12 @@ export class ToastComponent implements OnInit {
   message = ''
   type = ''
   isVisible = false;
+  toasts: any[] = [];
   constructor(private toastService: ToastService) { }
 
   ngOnInit(): void {
-    this.toastService.toastState.subscribe((toast: any) => {
-      this.type = toast.type;
-      this.message = toast.message;
-      this.isVisible = true;
-
-      setTimeout(() => {
-        this.isVisible = false;
-      }, toast.time);
+    this.toastService.toastState.subscribe((toasts: any[]) => {
+      this.toasts = toasts;
     });
   }
 

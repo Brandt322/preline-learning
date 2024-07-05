@@ -17,4 +17,8 @@ export class DashboardComponent implements OnInit {
     this.toastService.show('success', 'This is a success message, this message will disappear in 3 seconds.');
   }
 
+  openModalEdit() {
+    this.toastService.show('alert', 'This is a warning message, this message will disappear in 3 seconds.');
+  }
+
 }
