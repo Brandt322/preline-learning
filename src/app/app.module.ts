@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { FeatureModule } from './features/feature.module';
+import { CoreModule } from './core/global/core.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +22,8 @@ import { FeatureModule } from './features/feature.module';
     BrowserAnimationsModule,
     AuthModule,
     SharedModule,
-    FeatureModule
+    FeatureModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
