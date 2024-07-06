@@ -30,7 +30,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/preline/preline.js"
+              "node_modules/preline/preline.js",
+              "node_modules/@preline/overlay/index.js"
             ]
           },
           "configurations": {

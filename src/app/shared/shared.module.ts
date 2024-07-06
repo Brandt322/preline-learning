@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './components/layout/main/main.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { RouterModule } from '@angular/router';
+import { DeleteComponent } from './components/utils/modals/delete/delete.component';
 
 
 
 @NgModule({
   declarations: [
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    DeleteComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    DeleteComponent
   ]
 })
 export class SharedModule { }

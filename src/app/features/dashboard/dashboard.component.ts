@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastService } from 'src/app/core/global/toast/toast.service';
+import { MachineService } from 'src/app/services/machine/machine.service';
+import { MachineResponse, Equipo } from 'src/app/shared/models/machine.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,13 +10,19 @@ import { ToastService } from 'src/app/core/global/toast/toast.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private toastService: ToastService) { }
+  equipment!: MachineResponse
+  equipos!: Equipo[];
+  constructor(private toastService: ToastService, private machineService: MachineService) { }
 
   ngOnInit(): void {
+    this.machineService.getMachines(1, '').subscribe(machines => {
+      // console.log('machines: ', machines);
+      this.equipos = machines.equipos;
+    })
   }
 
   openModal() {
-    this.toastService.show('success', 'This is a success message, this message will disappear in 3 seconds.');
+    this.toastService.show('error', 'This is a success message, this message will disappear in 3 seconds.');
   }
 
   openModalEdit() {
